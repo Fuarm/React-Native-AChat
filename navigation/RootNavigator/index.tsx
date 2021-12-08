@@ -23,7 +23,8 @@ const stackScreens: {name: keyof RootStackParamList, component: FunctionComponen
 	},
 	{
 		name: 'Root',
-		component: BottomTabNavigator
+		component: BottomTabNavigator,
+		options: { headerShown: false }
 	},
 	{
 		name: 'NotFound',

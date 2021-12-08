@@ -3,7 +3,8 @@
  * https://reactnavigation.org/docs/typescript/
  */
 
-import { NavigatorScreenParams } from '@react-navigation/native';
+import { BottomTabScreenProps } from '@react-navigation/bottom-tabs';
+import { CompositeScreenProps, NavigatorScreenParams } from '@react-navigation/native';
 import { StackScreenProps } from '@react-navigation/stack';
 import React from 'react';
 
@@ -25,6 +26,11 @@ export type RootStackParamList = {
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> = StackScreenProps<
     RootStackParamList,
     Screen
+>;
+
+export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<
+  BottomTabScreenProps<RootTabParamList, Screen>,
+  StackScreenProps<RootStackParamList>
 >;
 
 export type RootTabParamList = {

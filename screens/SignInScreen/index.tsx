@@ -15,7 +15,10 @@ import { Voximplant } from 'react-native-voximplant';
 
 import commonStyles from '../../common/style';
 import { ACCOUNT_NAME, APPLICATION_NAME } from '../../constants';
+import { FontAwesome } from '../../utils/icons';
 import styles from './style';
+
+const voxClient = Voximplant.getInstance();
 
 export default function SignIn() {
 
@@ -24,20 +27,21 @@ export default function SignIn() {
     const [signInDisabled, setSignInDisabled] = useState(false);
     
     const navigation = useNavigation();
-    const voxClient = Voximplant.getInstance()
 
     useEffect(() => {
-        (async () => {
-            const state = await voxClient.getClientState();
-            if (state === Voximplant.ClientState.DISCONNECTED) {
-                await voxClient?.connect();
-            }
-            if (state === Voximplant.ClientState.LOGGED_IN) {
-                // 重定向
-                redirectChat();
-            }
-        })();
+        voxClientConnect();
     }, []);
+
+    const voxClientConnect = async () => {
+        const voxClientState = await voxClient.getClientState();
+        if (voxClientState === Voximplant.ClientState.DISCONNECTED) {
+            await voxClient?.connect();
+        }
+        if (voxClientState === Voximplant.ClientState.LOGGED_IN) {
+            // 重定向
+            redirectChat();
+        }
+    }
 
     const signUp = () => navigation.navigate('SignUp');
 
@@ -82,11 +86,11 @@ export default function SignIn() {
                 </View>
                 <View style={styles.thirdSignInContainer}>
                     <View style={styles.thirdSignInButton}>
-                        {/* <FontAwesome name="google" size={24} color="white" /> */}
+                        <FontAwesome name="google" size={24} color="white" />
                         <Text style={styles.thirdSignInButtonText}>Sign in with Google</Text>
                     </View>
                     <View style={[styles.thirdSignInButton, {backgroundColor: '#333333'}]}>
-                        {/* <FontAwesome name="github" size={24} color="white" /> */}
+                        <FontAwesome name="github" size={24} color="white" />
                         <Text style={styles.thirdSignInButtonText}>Sign in with GitHub</Text>
                     </View>
                 </View>
