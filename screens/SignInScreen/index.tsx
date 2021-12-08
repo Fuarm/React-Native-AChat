@@ -54,6 +54,10 @@ export default function SignIn() {
 
     const login = async () => {
         try {
+            const voxClientState = await voxClient.getClientState();
+            if (voxClientState === Voximplant.ClientState.DISCONNECTED) {
+                await voxClient?.connect();
+            }
             const authResult = await voxClient?.login(`${username}@${APPLICATION_NAME}.${ACCOUNT_NAME}.voximplant.com`, password);
             // 登录成功存放token
             // 重定向到token

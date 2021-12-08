@@ -9,7 +9,7 @@ import StaticTabBar, { height, width } from './StaticTabBar';
 
 const AnimatedSvg = Animated.createAnimatedComponent(Svg);
 
-const backgroundColor = "white";
+const defaultBackgroundColor = "white";
 const tabConcaveWidth = width / 4.2;
 
 const getPath = (): string => {
@@ -44,6 +44,7 @@ const value = new Animated.Value(0);
 export default function BottomTabBar(props: BottomTabBarProps & { theme?: string }) {
     // 解构参数
     const { state: {routes}, theme } = props;
+    const backgroundColor = theme || defaultBackgroundColor;
     const offsetX = (width / routes.length - tabConcaveWidth)/2;
     const translateX = value.interpolate({
         inputRange: [0-offsetX, width],
@@ -54,19 +55,13 @@ export default function BottomTabBar(props: BottomTabBarProps & { theme?: string
         <>
             <View {...{ height, width }}>
                 <AnimatedSvg width={width * 2} {...{ height }} style={{ transform: [{ translateX }] }}>
-                    <Path fill={theme || backgroundColor} {...{d}} />
+                    <Path fill={backgroundColor} {...{d}} />
                 </AnimatedSvg>
                 <View style={StyleSheet.absoluteFill}>
                     <StaticTabBar {...{tabBar: props, value }} />
                 </View>
             </View>
-            <SafeAreaView style={styles.container} />
+            <SafeAreaView style={{backgroundColor}} />
         </>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        backgroundColor,
-    },
-});
