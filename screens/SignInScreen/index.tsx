@@ -31,7 +31,6 @@ export default function SignIn() {
     useEffect(() => {
         voxClientConnect();
     }, []);
-
     const voxClientConnect = async () => {
         const voxClientState = await voxClient.getClientState();
         if (voxClientState === Voximplant.ClientState.DISCONNECTED) {
