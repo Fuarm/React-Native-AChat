@@ -272,6 +272,8 @@ PODS:
   - React-jsinspector (0.66.3)
   - React-logger (0.66.3):
     - glog
+  - react-native-blur (0.8.0):
+    - React
   - react-native-safe-area-context (3.3.2):
     - React-Core
   - react-native-voximplant (1.26.0):
@@ -398,6 +400,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - react-native-voximplant (from `../node_modules/react-native-voximplant`)
   - React-perflogger (from `../node_modules/react-native/ReactCommon/reactperflogger`)
@@ -471,6 +474,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-blur:
+    :path: "../node_modules/@react-native-community/blur"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   react-native-voximplant:
@@ -539,6 +544,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 433a691aee158533a6a6ee9c86cb4a1684fa2853
   React-jsinspector: d9c8eb0b53f0da206fed56612b289fec84991157
   React-logger: e522e76fa3e9ec3e7d7115b49485cc065cf4ae06
+  react-native-blur: cad4d93b364f91e7b7931b3fa935455487e5c33c
   react-native-safe-area-context: 584dc04881deb49474363f3be89e4ca0e854c057
   react-native-voximplant: 530e15884ebf58b7d88a76954caafbdfba0e1a13
   React-perflogger: 73732888d37d4f5065198727b167846743232882
@@ -561,6 +567,6 @@ SPEC CHECKSUMS:
   Yoga: 32a18c0e845e185f4a2a66ec76e1fd1f958f22fa
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: fa1e6f2d4911366a9c6130bfef15c6fc961d8a18
+PODFILE CHECKSUM: 7ab168a70cad5a94513cc61b96b42f5102165b69
 
 COCOAPODS: 1.11.2

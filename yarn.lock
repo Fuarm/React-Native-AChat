@@ -5563,12 +5563,17 @@ react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-bottom-animate-tabbar@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/react-native-bottom-animate-tabbar/-/react-native-bottom-animate-tabbar-1.0.4.tgz#c8819cc9cdfd919011611e1c57efcc23643344b1"
-  integrity sha512-WuCo7bDrJPdF3RtSjn7vF5oDCiYujBH0as2FwPVsZJqLxPs+bqjA7zPF93UXTnxCvkBdRMkcOp1jbEe3YlVaaA==
+react-native-bottom-animate-tabbar@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-native-bottom-animate-tabbar/-/react-native-bottom-animate-tabbar-1.0.5.tgz#746aaaa288d90546f830634238ee3e4325267fe3"
+  integrity sha512-upCUfSjhg5wcL5+lSj+ZYAwj9+Y3vLNFh9sEQVQ5920LkW+d6ZtWFZlkMDP8tSlofP5XVzXP62n9lWq6vHkERw==
   dependencies:
     "@react-navigation/bottom-tabs" "^6.0.9"
+    "@react-navigation/native" "^6.0.6"
+    d3-shape "^3.0.1"
+    react "^17.0.2"
+    react-native "^0.66.3"
+    react-native-svg "^12.1.1"
 
 react-native-codegen@^0.0.7:
   version "0.0.7"
@@ -5622,7 +5627,7 @@ react-native-voximplant@^1.26.0:
   resolved "https://registry.npmjs.org/react-native-voximplant/-/react-native-voximplant-1.26.0.tgz"
   integrity sha512-2IjP71nb1HY9BTqbr96rcgWnZqx+e0THT9ayEwUVwmxx273gKDMRe+Oa7bOslQb99Ke/nQkkxINSe1UczoNhbw==
 
-react-native@0.66.3:
+react-native@0.66.3, react-native@^0.66.3:
   version "0.66.3"
   resolved "https://registry.npmjs.org/react-native/-/react-native-0.66.3.tgz"
   integrity sha512-B/dQpuvta9YvF5MihDWefoGlTvxzUHK5X5RjdrXHAu/ihTehJXxEA+m6z/tufp1ZUMDjU+tMZK6gnehzCuYfzw==
@@ -5682,7 +5687,7 @@ react-test-renderer@17.0.2:
     react-shallow-renderer "^16.13.1"
     scheduler "^0.20.2"
 
-react@17.0.2:
+react@17.0.2, react@^17.0.2:
   version "17.0.2"
   resolved "https://registry.npmjs.org/react/-/react-17.0.2.tgz"
   integrity sha512-gnhPt75i/dq/z3/6q/0asP78D0u592D5L1pd7M8P+dck6Fu/jJeL6iVVK23fptSUZj8Vjf++7wXA8UNclGQcbA==
