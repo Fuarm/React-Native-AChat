@@ -57,7 +57,7 @@ export default function SignIn() {
             const authResult = await voxClient?.login(`${username}@${APPLICATION_NAME}.${ACCOUNT_NAME}.voximplant.com`, password);
             // 登录成功存放token
             // 重定向到token
-            console.log("Sign in success!", authResult);
+            console.log("Sign in success! name:", authResult.displayName);
             // 重定向
             redirectChat();
         } catch (e) {

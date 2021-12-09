@@ -1,17 +1,16 @@
-import React, { Fragment, FunctionComponent } from 'react';
+import React, { FunctionComponent } from 'react';
 import { BottomTabNavigationOptions, createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import BottomTabBar from 'react-native-bottom-animate-tabbar';
 
 import ChatScreen from '../../screens/ChatScreen';
 import ContactsScreen from '../../screens/ContactsScreen';
 import UserScreen from '../../screens/UserScreen';
-import BottomTabBar from '../BottomTabBar';
+// import BottomTabBar from '../BottomTabBar';
 
 import { RootTabParamList, RootTabScreenProps } from '../../types';
 import { FontAwesome } from '../../utils/icons';
 
-const BottomTab = createBottomTabNavigator<RootTabParamList>();
-
-const bottomTabScreenOptions = (options?: BottomTabNavigationOptions) => ({ navigation }: RootTabScreenProps<keyof RootTabParamList>) => options || {}
+// const bottomTabScreenOptions = (options?: BottomTabNavigationOptions) => ({ navigation }: RootTabScreenProps<keyof RootTabParamList>) => options || {}
 
 const bottomTabScreens: {name: keyof RootTabParamList, component: FunctionComponent<any>, options?: BottomTabNavigationOptions}[] = [
 	{
@@ -37,12 +36,20 @@ const bottomTabScreens: {name: keyof RootTabParamList, component: FunctionCompon
 	},
 ]
 
+const BottomTab = createBottomTabNavigator<RootTabParamList>();
+
 export default function BottomTabNavigator() {
   return (
-    <BottomTab.Navigator tabBar={props => <BottomTabBar {...props} theme={'red'} />}>
+    <BottomTab.Navigator
+      tabBar={props => <BottomTabBar {...props} />}
+    >
       {
 				bottomTabScreens.map(screen => 
-          <BottomTab.Screen {...screen} options={bottomTabScreenOptions(screen.options)}  key={screen.name} />
+          <BottomTab.Screen {...screen} options={
+            {
+              ...screen.options
+            }
+          }  key={screen.name} />
 				)
 			}
     </BottomTab.Navigator>

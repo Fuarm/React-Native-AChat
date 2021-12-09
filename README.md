@@ -18,6 +18,13 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.3-all.zip
 解决方案：手动打开模拟器，执行命令`yarn android`
 
 ### ios 环境配置bug
+pod 命令安装依赖失败
+
+可以在 `/etc/hosts` 文件中配置 可以 ping 通的 ip 即可下载安装
+
+M1 芯片 导致的bug
+
+参考方案: arm64（链接暂未找到）
 
 ### 1、登陆/注册实现 （基于 voximplant）：注册
 1、KeyboardAvoidingView 弹出输入键盘，没有调整自身的 height 或底部的 padding 安卓模拟器中（未使用安卓真机测试）
@@ -27,6 +34,12 @@ distributionUrl=https\://services.gradle.org/distributions/gradle-7.3-all.zip
 ### 2、组件：轮播、按钮（可渐变）
 
 ### 3、TabBar 组件
+1、使用 react-navigation 中提供的导航组件
+2、使用 react-native-blur Android 中 出现的编译bug
+
+`Could not find com.eightbitlab：blurview：1.6.3.#446`
+
+解决方案：https://github.com/Kureev/react-native-blur/issues/446
 
 ### 4、react-navgiation 导航
 1、依赖插件
