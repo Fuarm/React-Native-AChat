@@ -5563,10 +5563,10 @@ react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-16.13.1.tgz"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-native-bottom-animate-tabbar@^1.0.3:
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/react-native-bottom-animate-tabbar/-/react-native-bottom-animate-tabbar-1.0.3.tgz#a69a7012727dacb5e27068e22d3aa5ac2cd78aad"
-  integrity sha512-QYWzVS7uJhu8S5PyaWacUgbjmD8bcFzR+SgopWR0StT3NJF36d8ZGyiHaMuQZCbAzhHp3WyMw/Z2eM8wvkH0ZA==
+react-native-bottom-animate-tabbar@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-bottom-animate-tabbar/-/react-native-bottom-animate-tabbar-1.0.4.tgz#c8819cc9cdfd919011611e1c57efcc23643344b1"
+  integrity sha512-WuCo7bDrJPdF3RtSjn7vF5oDCiYujBH0as2FwPVsZJqLxPs+bqjA7zPF93UXTnxCvkBdRMkcOp1jbEe3YlVaaA==
   dependencies:
     "@react-navigation/bottom-tabs" "^6.0.9"
 

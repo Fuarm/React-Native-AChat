@@ -5,10 +5,10 @@ import BottomTabBar from 'react-native-bottom-animate-tabbar';
 import ChatScreen from '../../screens/ChatScreen';
 import ContactsScreen from '../../screens/ContactsScreen';
 import UserScreen from '../../screens/UserScreen';
-// import BottomTabBar from '../BottomTabBar';
 
 import { RootTabParamList, RootTabScreenProps } from '../../types';
 import { FontAwesome } from '../../utils/icons';
+import { themeColor } from '../../constants/theme';
 
 // const bottomTabScreenOptions = (options?: BottomTabNavigationOptions) => ({ navigation }: RootTabScreenProps<keyof RootTabParamList>) => options || {}
 
@@ -47,6 +47,7 @@ export default function BottomTabNavigator() {
 				bottomTabScreens.map(screen => 
           <BottomTab.Screen {...screen} options={
             {
+              tabBarActiveTintColor: themeColor,
               ...screen.options
             }
           }  key={screen.name} />
