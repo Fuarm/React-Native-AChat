@@ -11,8 +11,8 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         paddingHorizontal: 36,
-        // 安卓模拟器中，不设置此属性， button 的 width height 不起作用
-        backgroundColor: 'transparent'
+        // 安卓模拟器中，使用 BlurView 导致的, 不设置此属性， button 的 width height 不起作用
+        backgroundColor: 'transparent',
     },
     button: {
         width: 60,
@@ -22,5 +22,6 @@ export default StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#4f4f4f',
         marginTop: 42,
+        marginBottom: 48,
     }
 })

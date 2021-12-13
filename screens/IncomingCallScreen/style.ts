@@ -7,14 +7,15 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         lineHeight: 48,
-        marginTop: 70,
+        marginTop: 60,
     },
     phone: {
         color: 'white',
         textAlign: 'center'
     },
     buttonContainer: {
-        alignSelf: 'center',
+        // 安卓模拟器中，使用 BlurView 导致的, 不设置此属性， button 的 width height 不起作用
+        backgroundColor: 'transparent',
     },
     button: {
         width: 60,
@@ -23,6 +24,6 @@ export default StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         marginHorizontal: 70,
-        marginBottom: 100
+        marginBottom: 100,
     }
 })

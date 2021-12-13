@@ -3,23 +3,14 @@ import { View, FlatList, TextInput, Alert, ActivityIndicator } from 'react-nativ
 import ContactsItem from '../../components/ContactsItem';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import { FontAwesome } from '../../utils/icons';
+import { FontAwesome } from '../../common/icons';
 import { Fetch } from '../../utils';
 import { USER_ACCOUNT } from '../../constants';
 import { useNavigation } from '@react-navigation/native';
 
 import commonStyles from '../../common/style';
 import styles from './style';
-
-type User = {
-    user_active: boolean,
-    balance: number,
-    user_id: number,
-    user_name: string,
-    user_display_name: string,
-    frozen: boolean,
-    modified: string
-}
+import { User } from '../../types';
 
 export default function ContactsScreen() {
 
@@ -48,8 +39,8 @@ export default function ContactsScreen() {
         setLoading(false);
     }
 
-    const handlerContact = (contact: User) => {
-        return () => navigation.navigate("Calling");
+    const handlerContact = (contact?: User) => {
+        return () => navigation.navigate("Calling", contact);
     }
 
     return (
@@ -61,7 +52,7 @@ export default function ContactsScreen() {
             ]}
             ListHeaderComponent={Search}
             refreshing={loading}
-            onRefresh={() => setLoading(c=>!c)}
+            onRefresh={getUsers}
             data={contacts}
             renderItem={({item}) => <ContactsItem name={item.user_display_name} onClick={handlerContact(item)} />}
             keyExtractor={item => item.user_id + ''}

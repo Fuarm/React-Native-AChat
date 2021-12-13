@@ -11,7 +11,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         lineHeight: 48,
-        marginTop: 70,
+        marginTop: 60,
     },
     phone: {
         color: 'white',

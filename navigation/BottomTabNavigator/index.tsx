@@ -7,7 +7,7 @@ import ContactsScreen from '../../screens/ContactsScreen';
 import UserScreen from '../../screens/UserScreen';
 
 import { RootTabParamList, RootTabScreenProps } from '../../types';
-import { FontAwesome } from '../../utils/icons';
+import { FontAwesome } from '../../common/icons';
 import { themeColor } from '../../constants/theme';
 
 // const bottomTabScreenOptions = (options?: BottomTabNavigationOptions) => ({ navigation }: RootTabScreenProps<keyof RootTabParamList>) => options || {}

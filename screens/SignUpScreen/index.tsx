@@ -34,7 +34,7 @@ export default function SignUpScreen() {
             }
             error && Alert.alert('fail', 'code：' + error.code + '，' + error.msg);
         } catch (e) {
-            console.log("Sign up error!", e);
+            Alert.alert("System error", 'error msg: ' + e);
         }
         setSignUpDisabled(false);
     }

@@ -16,7 +16,7 @@ import { Voximplant } from 'react-native-voximplant';
 
 import commonStyles from '../../common/style';
 import { ACCOUNT_NAME, APPLICATION_NAME, USER_ACCOUNT } from '../../constants';
-import { FontAwesome } from '../../utils/icons';
+import { FontAwesome } from '../../common/icons';
 import styles from './style';
 
 const voxClient = Voximplant.getInstance();
@@ -32,6 +32,7 @@ export default function SignIn() {
     useEffect(() => {
         voxClientConnect();
     }, []);
+
     const voxClientConnect = async () => {
         const voxClientState = await voxClient.getClientState();
         if (voxClientState === Voximplant.ClientState.DISCONNECTED) {
@@ -54,7 +55,7 @@ export default function SignIn() {
 
     const login = async () => {
         try {
-            const authResult = await voxClient?.login(`${username}@${APPLICATION_NAME}.${ACCOUNT_NAME}.voximplant.com`, password);
+            const authResult = await voxClient?.login(`${username}@${APPLICATION_NAME}.${ACCOUNT_NAME}.n2.voximplant.com`, password);
             // 登录成功存放token,username
             AsyncStorage.setItem(USER_ACCOUNT, `${username}`, (error?: Error) => error && console.log("AsyncStorage error! error msg:", error));
             // 重定向到token

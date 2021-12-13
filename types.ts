@@ -39,4 +39,14 @@ export type RootTabParamList = {
     Contacts: undefined;
 };
 
+export type User = {
+    user_active: boolean,
+    balance: number,
+    user_id: number,
+    user_name: string,
+    user_display_name: string,
+    frozen: boolean,
+    modified: string
+}
+
  
