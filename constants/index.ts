@@ -12,3 +12,15 @@ export const APPLICATION_ID = 10396412;
 
 //  Voximplant application_name
 export const APPLICATION_NAME = "videocalling";
+
+/**
+ * AsyncStorage Key
+ * 注意： key 中 不能使用 _ 连接
+ **/ 
+
+// user login token
+export const USER_TOKEN = "userToken";
+
+// user login account name
+export const USER_ACCOUNT = "userAccount";
+

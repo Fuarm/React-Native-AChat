@@ -54,6 +54,7 @@ react-native-safe-area-context（关联插件）
 ### 5、HeadNav 组件
 
 ### 6、fetch 封装
+1、简单封装 fetch ，已测试 get 请求
 
 ### 7、ContactScreen
 

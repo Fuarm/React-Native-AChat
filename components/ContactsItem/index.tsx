@@ -1,9 +1,19 @@
 import React from "react";
-import { Text } from "react-native";
+import { Pressable, Text } from "react-native";
 
-const ContactsItem = () => {
+
+interface ContactsItemProps {
+    name: string,
+    onClick: () => void
+}
+
+const ContactsItem = ({ name, onClick }: ContactsItemProps) => {
     return (
-        <Text>Text</Text>
+        <Pressable onPress={onClick}>
+            <Text style={{
+                lineHeight: 32
+            }}>{name}</Text>
+        </Pressable>
     );
 }
 

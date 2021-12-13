@@ -7,6 +7,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import Foundation from 'react-native-vector-icons/Foundation'
 import Ionicons from 'react-native-vector-icons/Ionicons'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 import Fontisto from 'react-native-vector-icons/Fontisto'
 import Zocial from 'react-native-vector-icons/Zocial'
 
@@ -21,6 +22,7 @@ export {
     Foundation,
     Ionicons,
     MaterialIcons,
+    MaterialCommunityIcons,
     Fontisto,
     Zocial
 }

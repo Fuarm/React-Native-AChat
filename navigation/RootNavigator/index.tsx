@@ -1,14 +1,15 @@
 import React, { FunctionComponent } from "react";
 import { createStackNavigator, StackNavigationOptions } from '@react-navigation/stack';
 
+import BottomTabNavigator from "../BottomTabNavigator";
+
 import NotFoundScreen from '../../screens/NotFoundScreen';
 import SignInScreen from '../../screens/SignInScreen';
 import SignUpScreen from "../../screens/SignUpScreen";
+import CallingScreen from "../../screens/CallingScreen";
+import IncomingCallScreen from "../../screens/IncomingCallScreen";
 
 import { RootStackParamList } from "../../types";
-import BottomTabNavigator from "../BottomTabNavigator";
-
-const Stack = createStackNavigator<RootStackParamList>();
 
 const stackScreens: {name: keyof RootStackParamList, component: FunctionComponent<any>, options?: StackNavigationOptions}[] = [
 	{
@@ -27,11 +28,24 @@ const stackScreens: {name: keyof RootStackParamList, component: FunctionComponen
 		options: { headerShown: false }
 	},
 	{
+		name: 'Calling',
+		component: CallingScreen,
+		options: { headerShown: false }
+	},
+	{
+		name: 'IncomingCall',
+		component: IncomingCallScreen,
+		options: { headerShown: false }
+	},
+	{
 		name: 'NotFound',
 		component: NotFoundScreen,
 		options: { title: 'Oops!' }
 	}
 ]
+
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function RootNavigator() {
 	return (

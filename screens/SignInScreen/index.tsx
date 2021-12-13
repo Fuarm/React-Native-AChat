@@ -9,12 +9,13 @@ import {
     Pressable,
     TextInput,
     ActivityIndicator,
-    Alert
+    Alert,
 } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Voximplant } from 'react-native-voximplant';
 
 import commonStyles from '../../common/style';
-import { ACCOUNT_NAME, APPLICATION_NAME } from '../../constants';
+import { ACCOUNT_NAME, APPLICATION_NAME, USER_ACCOUNT } from '../../constants';
 import { FontAwesome } from '../../utils/icons';
 import styles from './style';
 
@@ -54,7 +55,8 @@ export default function SignIn() {
     const login = async () => {
         try {
             const authResult = await voxClient?.login(`${username}@${APPLICATION_NAME}.${ACCOUNT_NAME}.voximplant.com`, password);
-            // 登录成功存放token
+            // 登录成功存放token,username
+            AsyncStorage.setItem(USER_ACCOUNT, `${username}`, (error?: Error) => error && console.log("AsyncStorage error! error msg:", error));
             // 重定向到token
             console.log("Sign in success! name:", authResult.displayName);
             // 重定向
@@ -73,6 +75,7 @@ export default function SignIn() {
             behavior={Platform.OS == "ios" ? "padding" : "height"}
             style={[commonStyles.flex, commonStyles.background]}
         >
+            
             <ScrollView style={commonStyles.flex} contentContainerStyle={styles.root}>
                 <View style={styles.titleContainer}>
                     <Text style={styles.title}>Sign in</Text>
