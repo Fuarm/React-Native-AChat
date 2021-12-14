@@ -1,5 +1,5 @@
 import { BlurView } from '@react-native-community/blur';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pressable, SafeAreaView, StatusBar, Text, View } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -8,8 +8,31 @@ import styles from './style';
 
 import { FontAwesome, MaterialCommunityIcons } from '../../common/icons';
 import { dangerColor, successColor } from '../../constants/theme';
+import { useNavigation, useRoute } from '@react-navigation/native';
+
+import { Voximplant } from 'react-native-voximplant';
 
 export default function IncomingCallScreen () {
+    const [caller, setCaller] = useState();
+
+    const navigation = useNavigation();
+    const { call } = useRoute().params;
+
+    useEffect(() => {
+        setCaller(call.getEndpoints()[0].displayName);
+
+        const { Disconnected } = Voximplant.CallEvents;
+        call.on(Disconnected, () => navigation.goBack());
+
+        return () => call.off(Disconnected);
+    }, [])
+
+    const onDecline = () => call.decline();
+
+    const onAccept = () => navigation.replace("Calling", {
+        call,
+        isIncomingCall: true
+    });
 
     return (
         <>
@@ -20,17 +43,18 @@ export default function IncomingCallScreen () {
                 end={{x: 1.5, y: 0.8}}
                 style={commonStyles.flex}
             >
-                <View style={[commonStyles.flex, {paddingTop: StatusBar.currentHeight, position: 'relative', zIndex:1}]}>
-                    <Text style={styles.name}>From wang</Text>
-                    <Text style={styles.phone}>+ 86 188****2121</Text>
+                
+                <BlurView blurAmount={50} blurType="dark" style={[commonStyles.flex, styles.blur]} />
+                <View style={[commonStyles.flex, { position: 'relative', zIndex:1}]}>
+                    <Text style={styles.name}>From { caller }</Text>
+                    <Text style={styles.phone}>AChatApp video</Text>
                 </View>
-                <BlurView blurAmount={50} blurType="dark" style={[commonStyles.flex]} />
                 <View style={[commonStyles.row, styles.buttonContainer, {position: 'relative', zIndex: 1}]}>
-                    <Pressable style={[styles.button, {backgroundColor: dangerColor}]}>
+                    <Pressable onPress={onDecline} style={[styles.button, {backgroundColor: dangerColor}]}>
                         <MaterialCommunityIcons name="phone-hangup" size={32} color="white" />
                     </Pressable>
-                    <Pressable style={[styles.button, {backgroundColor: successColor}]}>
-                        <FontAwesome name="share" size={24} color="white" />
+                    <Pressable onPress={onAccept} style={[styles.button, {backgroundColor: successColor}]}>
+                        <FontAwesome name="check" size={24} color="white" />
                     </Pressable>
                 </View>
                 <SafeAreaView />

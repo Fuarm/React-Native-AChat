@@ -12,7 +12,6 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Navigation, { navigationRef } from './navigation';
 
 import { Voximplant } from 'react-native-voximplant';
-import { useNavigation } from '@react-navigation/native';
 
 const App = () => {
 

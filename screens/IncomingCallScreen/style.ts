@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StatusBar, StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
     name: {
@@ -7,7 +7,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         lineHeight: 48,
-        marginTop: 60,
+        marginTop: 50 + (StatusBar.currentHeight || 0),
     },
     phone: {
         color: 'white',
@@ -25,5 +25,10 @@ export default StyleSheet.create({
         justifyContent: 'center',
         marginHorizontal: 70,
         marginBottom: 100,
+    },
+    blur: {
+        width: '100%',
+        height: '100%',
+        position: 'absolute'
     }
 })
